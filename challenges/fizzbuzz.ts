@@ -13,6 +13,9 @@ fizzbuzz(16);
 */
 
 const fizzbuzz = (num: number): (number | string)[] => {
+  switch num
+   case num % 3 === 0
+    
   return [];
 };
 
