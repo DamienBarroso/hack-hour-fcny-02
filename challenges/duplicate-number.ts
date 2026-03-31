@@ -6,6 +6,10 @@
  */
 
 export const duplicateNumber = (array: number[]): number => {
+  const check: number[] = new Set(array)
+  for(let x = 0; x <= array.length; x++){
+    if (array[x] === check[x]){ return array[x] }
+  }
   return 0;
 };
 

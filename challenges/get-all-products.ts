@@ -22,6 +22,9 @@ multiple zeroes?
 */
 
 const getAllProducts = (array: number[]): number[] => {
+  for(let x = 0; x <= array.length; x++){
+    
+  }
   return [];
 };
 

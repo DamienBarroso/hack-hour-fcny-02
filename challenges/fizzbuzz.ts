@@ -13,10 +13,14 @@ fizzbuzz(16);
 */
 
 const fizzbuzz = (num: number): (number | string)[] => {
-  switch num
-   case num % 3 === 0
-    
-  return [];
+  let result: (number | string)[] = []
+  for(let i = 1; i <= num; i++){
+    if(i % 3 === 0 && i % 5 === 0){ result.push("fizzbuzz") }
+    else if(i % 3 === 0){ result.push("fizz") }
+    else if(i % 5 === 0){ result.push("buzz") }
+    else{ result.push(i)}
+  }
+  return result;
 };
 
 /*
@@ -39,8 +43,23 @@ fizzbuzzbazz(25);
 
 */
 
+//instead of checking the condition to push in fizz, buzz or bazz for each index of result,
+//it might be simpler to use a placeholder string, fill that out based on the conditons, and push that in if it's not empty
+
 const fizzbuzzbazz = (num: number): (number | string)[] => {
-  return [];
+  let result: (number | string)[] = [];
+  let hs: string = ''; //a placeholder string variable to fill out
+
+  for(var i = 1; i <= num; i++){
+    if(i % 3 === 0){ hs += "fizz" }
+    if(i % 5 === 0){ hs += "buzz" } // these if statements fill out the placeholder if the numbers are divisable
+    if(i % 7 === 0){ hs += "bazz" } // sorts fizz, buzz and bazz in order
+
+    if(hs === ""){ result.push(i) } //pushed the number if placeholder is empty
+    else { result.push(hs) } // pushed the placeholder if it's not empty
+    hs = '' // empties out the placeholder for the next loop
+  }  
+  return result;
 };
 
 export { fizzbuzz, fizzbuzzbazz };

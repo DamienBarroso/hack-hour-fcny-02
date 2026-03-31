@@ -17,6 +17,12 @@
 */
 
 export const twoSum = (arr: number[], target: number): boolean => {
+  for(let i = 0; i <= arr.length; i++){
+   for (let x = 0; x <= arr.length-1; x++){
+    if (arr[x] + arr[x+1] === target){ return true }
+  }
+  arr.shift()
+}
   return false;
 };
 
