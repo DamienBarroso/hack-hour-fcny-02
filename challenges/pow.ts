@@ -10,8 +10,14 @@
  */
 
 function pow(base: number, power: number): number {
-  return 0; // Placeholder return value for type safety - replace for your solution
+  const oBase = base;
+  for(let x = 1; x < power; x++){
+    base = base*oBase
+  }
+  return base; // Placeholder return value for type safety - replace for your solution
 }
+
+console.log(pow(2,16))
 
 /**
  * Extension: Use recursion.
